@@ -50,7 +50,7 @@ namespace FinAnSu
             [ExcelArgument("is the annual dividend yield.", Name = "dividend_yield")] double q,
             [ExcelArgument("is the implied volatility at expiry.", Name = "volatility")] double v)
         {
-            double d1 = (Math.Log(S / K) + (r - q + v * v / 2) * T) / (v * Math.Sqrt(T));
+            double d1 = (Math.LN(S / K) + (r - q + v * v / 2) * T) / (v * Math.Sqrt(T));
             double d2 = d1 - v * Math.Sqrt(T);
 
             if (IsCall(callPutFlag))
